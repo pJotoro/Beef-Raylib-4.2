@@ -1,0 +1,22 @@
+FileVersion = 1
+Dependencies = {corlib = "*", corlib = "*", corlib = "*", corlib = "*"}
+
+[Project]
+Name = "BeefRaylibBindings"
+TargetType = "BeefLib"
+StartupObject = "Raylib.Program"
+DefaultNamespace = "Raylib"
+
+[Configs.Debug.Win64]
+CLibType = "DynamicDebug"
+LibPaths = ["user32.lib", "gdi32.lib", "winmm.lib", "shell32.lib", "$(ProjectDir)\\raylib\\debug\\raylib.lib"]
+
+[Configs.Release.Win64]
+CLibType = "Dynamic"
+LibPaths = ["user32.lib", "gdi32.lib", "winmm.lib", "shell32.lib", "$(ProjectDir)\\raylib\\release\\raylib.lib"]
+
+[Configs.Paranoid.Win64]
+LibPaths = ["user32.lib", "gdi32.lib", "winmm.lib", "shell32.lib"]
+
+[Configs.Test.Win64]
+LibPaths = ["user32.lib", "gdi32.lib", "winmm.lib", "shell32.lib"]
