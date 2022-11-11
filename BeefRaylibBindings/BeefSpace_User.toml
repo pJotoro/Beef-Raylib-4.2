@@ -1,18 +1,29 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win64"
-RecentFilesList = ["src\\Raylib.bf"]
+RecentFilesList = ["c:\\Users\\jonas\\Downloads\\raygui-3.2\\raygui-3.2\\src\\raygui.h"]
 
 [MainWindow]
-X = 78
+X = 0
 Y = 0
 Width = 1858
 Height = 1096
-ShowKind = "Maximized"
+ShowKind = "Normal"
 
 [MainDockingFrame]
 Type = "DockingFrame"
 SplitType = 1
+
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 347.0
+RequestedHeight = 131.0
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Workspace"
+TabWidth = 112.2223
+Type = "ProjectPanel"
 
 [[MainDockingFrame.DockedWidgets]]
 RequestedWidth = 150.0
@@ -22,62 +33,56 @@ Type = "DockingFrame"
 SplitType = 2
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 150.0
-RequestedHeight = 150.0
-SizePriority = 150.0
-Type = "DockingFrame"
-SplitType = 1
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
-RequestedWidth = 355.0
-RequestedHeight = 230.0
-Type = "TabbedView"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
-TabLabel = "Workspace"
-TabWidth = 113.6364
-Type = "ProjectPanel"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
 IsFillWidget = true
 Permanent = true
 RequestedWidth = 150.0
-RequestedHeight = 150.0
-SizePriority = 150.0
-DefaultDocumentsTabbedView = true
+RequestedHeight = 833.4
+SizePriority = 833.4
 Type = "TabbedView"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
-TabLabel = "Raylib.bf"
-TabWidth = 80.56821
-Type = "SourceViewPanel"
-FilePath = "src\\Raylib.bf"
-CursorPos = 162
-ProjectName = "BeefRaylibBindings"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
 RequestedWidth = 446.0
-RequestedHeight = 230.0
+RequestedHeight = 161.0
 Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Find Results"
+TabWidth = 117.7778
+Type = "FindResultsPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Output"
-TabWidth = 91.47729
+TabWidth = 90.55558
 Type = "OutputPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Watch"
-TabWidth = 86.36366
+TabWidth = 85.55557
 Type = "WatchPanel"
-Columns = [{Width = 351.0}, {Width = 655.0}, {Width = 351.0}]
+Columns = [{Width = 359.0}, {Width = 670.0}, {Width = 359.0}]
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Call Stack"
-TabWidth = 105.1137
+TabWidth = 103.8889
 Type = "CallStackPanel"
+
+[[MainDockingFrame.DockedWidgets]]
+IsFillWidget = true
+RequestedWidth = 1489.4
+RequestedHeight = 833.4
+SizePriority = 0.8304348
+DefaultDocumentsTabbedView = true
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "raygui.h"
+TabWidth = 75.55559
+Type = "SourceViewPanel"
+FilePath = "c:\\Users\\jonas\\Downloads\\raygui-3.2\\raygui-3.2\\src\\raygui.h"
+CursorPos = 32769
+VertPos = 19077.53
 
 [[BookmarkFolders]]
 Title = ""
