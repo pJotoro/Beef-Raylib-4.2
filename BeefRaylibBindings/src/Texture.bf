@@ -89,18 +89,18 @@ public struct Texture
 
 	// Draw texture quad with tiling and offset parameters 
 	[CallingConvention(.Cdecl), LinkName("DrawTextureQuad"), NoShow]
-	public static extern void Draw(Texture2D texture, Vector2 tiling, Vector2 offset, Rectangle quad, Color tint);
-	public void Draw(Vector2 tiling, Vector2 offset, Rectangle quad, Color tint)
+	public static extern void DrawQuad(Texture2D texture, Vector2 tiling, Vector2 offset, Rectangle quad, Color tint);
+	public void DrawQuad(Vector2 tiling, Vector2 offset, Rectangle quad, Color tint)
 	{
-		Draw(this, tiling, offset, quad, tint);
+		DrawQuad(this, tiling, offset, quad, tint);
 	}
 
 	// Draw part of a texture (defined by a rectangle) with rotation and scale tiled into dest. 
 	[CallingConvention(.Cdecl), LinkName("DrawTextureTiled"), NoShow]
-	public static extern void Draw(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, float scale, Color tint);
-	public void Draw(Rectangle source, Rectangle dest, Vector2 origin, float rotation, float scale, Color tint)
+	public static extern void DrawTiled(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, float scale, Color tint);
+	public void DrawTiled(Rectangle source, Rectangle dest, Vector2 origin, float rotation, float scale, Color tint)
 	{
-		Draw(this, source, dest, origin, rotation, scale, tint);
+		DrawTiled(this, source, dest, origin, rotation, scale, tint);
 	}
 
 	// Draw a part of a texture defined by a rectangle with 'pro' parameters 
@@ -113,18 +113,18 @@ public struct Texture
 
 	// Draws a texture (or part of it) that stretches or shrinks nicely 
 	[CallingConvention(.Cdecl), LinkName("DrawTextureNPatch"), NoShow]
-	public static extern void Draw(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint);
-	public void Draw(NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint)
+	public static extern void DrawNPatch(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint);
+	public void DrawNPatch(NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint)
 	{
-		Draw(this, nPatchInfo, dest, origin, rotation, tint);
+		DrawNPatch(this, nPatchInfo, dest, origin, rotation, tint);
 	}
 
 	// Draw a textured polygon 
 	[CallingConvention(.Cdecl), LinkName("DrawTexturePoly"), NoShow]
-	public static extern void Draw(Texture2D texture, Vector2 center, Vector2 * points, Vector2 * texcoords, int32 pointCount, Color tint);
-	public void Draw(Vector2 center, Vector2 * points, Vector2 * texcoords, int32 pointCount, Color tint)
+	public static extern void DrawPoly(Texture2D texture, Vector2 center, Vector2 * points, Vector2 * texcoords, int32 pointCount, Color tint);
+	public void DrawPoly(Vector2 center, Vector2 * points, Vector2 * texcoords, int32 pointCount, Color tint)
 	{
-		Draw(this, center, points, texcoords, pointCount, tint);
+		DrawPoly(this, center, points, texcoords, pointCount, tint);
 	}
 
 	// Set texture and rectangle to be used on shapes drawing 
