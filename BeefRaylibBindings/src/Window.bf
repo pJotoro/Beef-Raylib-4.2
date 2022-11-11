@@ -140,3 +140,15 @@ public static class Window
 	[CallingConvention(.Cdecl), LinkName("GetWindowScaleDPI")]
 	public static extern Vector2 GetScaleDPI();
 }
+
+// TODO(pJotoro): Is this the window width or something else?
+static
+{
+	// Get current screen width 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern int32 GetScreenWidth();
+
+	// Get current screen height 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern int32 GetScreenHeight();
+}

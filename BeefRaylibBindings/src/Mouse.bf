@@ -121,4 +121,8 @@ public static class Mouse
 		[CallingConvention(.Cdecl), LinkName("SetMouseCursor")]
 		public static extern void Set(Kind cursor);
 	}
+
+	// Get a ray trace from mouse position 
+	[CallingConvention(.Cdecl), LinkName("GetMouseRay")]
+	public static extern Ray GetRay(Vector2 mousePosition, Camera camera);
 }

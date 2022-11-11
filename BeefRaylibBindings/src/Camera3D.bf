@@ -73,3 +73,14 @@ public struct Camera3D
 	public static extern Matrix GetMatrix(Camera camera);
 	public Matrix GetMatrix() { return GetMatrix(this); }
 }
+
+static
+{
+	// Get the screen space position for a 3d world space position 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern Vector2 GetWorldToScreen(Vector3 position, Camera camera);
+
+	// Get size position for a 3d world space position 
+	[CallingConvention(.Cdecl), LinkName("GetWorldToScreenEx")]
+	public static extern Vector2 GetWorldToScreen(Vector3 position, Camera camera, int32 width, int32 height);
+}

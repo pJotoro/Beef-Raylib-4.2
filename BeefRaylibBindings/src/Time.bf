@@ -11,4 +11,8 @@ static
 	// Get elapsed time in seconds since InitWindow() 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern double GetTime();
+
+	// Wait for some time (halt program execution) 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern void WaitTime(double seconds);
 }

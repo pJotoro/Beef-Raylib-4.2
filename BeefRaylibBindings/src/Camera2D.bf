@@ -44,3 +44,14 @@ public struct Camera2D
 	public static extern Matrix GetMatrix(Camera2D camera);
 	public Matrix GetMatrix() { return GetMatrix(this); }
 }
+
+static
+{
+	// Get the world space position for a 2d camera screen space position 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
+
+	// Get the screen space position for a 2d camera world space position 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera);
+}

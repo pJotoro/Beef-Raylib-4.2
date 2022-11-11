@@ -13,7 +13,7 @@ public struct GlyphInfo
 	public Image image;
 }
 
-struct Glyph
+public struct Glyph
 {
 	private char32 mCodepoint;
 	private Font mFont;

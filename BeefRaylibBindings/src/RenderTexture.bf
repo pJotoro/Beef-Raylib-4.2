@@ -31,3 +31,14 @@ public struct RenderTexture
 	public static extern void Unload(RenderTexture2D target);
 	public void Unload() { Unload(this); }
 }
+
+static
+{
+	// Get current render width (it considers HiDPI) 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern int32 GetRenderWidth();
+
+	// Get current render height (it considers HiDPI) 
+	[CLink, CallingConvention(.Cdecl)]
+	public static extern int32 GetRenderHeight();
+}
