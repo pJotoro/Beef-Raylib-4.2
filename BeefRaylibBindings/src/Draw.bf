@@ -21,20 +21,20 @@ static
 	public static extern void DrawPixel(int32 posX, int32 posY, Color color);
 
 	// Draw a pixel (Vector version) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawPixelV(Vector2 position, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawPixelV")]
+	public static extern void DrawPixel(Vector2 position, Color color);
 
 	// Draw a line 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern void DrawLine(int32 startPosX, int32 startPosY, int32 endPosX, int32 endPosY, Color color);
 
 	// Draw a line (Vector version) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawLineV(Vector2 startPos, Vector2 endPos, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawLineV")]
+	public static extern void DrawLine(Vector2 startPos, Vector2 endPos, Color color);
 
 	// Draw a line defining thickness 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawLineEx")]
+	public static extern void DrawLine(Vector2 startPos, Vector2 endPos, float thick, Color color);
 
 	// Draw a line using cubic-bezier curves in-out 
 	[CLink, CallingConvention(.Cdecl)]
@@ -69,8 +69,8 @@ static
 	public static extern void DrawCircleGradient(int32 centerX, int32 centerY, float radius, Color color1, Color color2);
 
 	// Draw a color-filled circle (Vector version) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawCircleV(Vector2 center, float radius, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawCircleV")]
+	public static extern void DrawCircle(Vector2 center, float radius, Color color);
 
 	// Draw circle outline 
 	[CLink, CallingConvention(.Cdecl)]
@@ -97,8 +97,8 @@ static
 	public static extern void DrawRectangle(int32 posX, int32 posY, int32 width, int32 height, Color color);
 
 	// Draw a color-filled rectangle (Vector version) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawRectangleV(Vector2 position, Vector2 size, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawRectangleV")]
+	public static extern void DrawRectangle(Vector2 position, Vector2 size, Color color);
 
 	// Draw a vertical-gradient-filled rectangle 
 	[CLink, CallingConvention(.Cdecl)]
@@ -109,24 +109,12 @@ static
 	public static extern void DrawRectangleGradientH(int32 posX, int32 posY, int32 width, int32 height, Color color1, Color color2);
 
 	// Draw a gradient-filled rectangle with custom vertex colors 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawRectangleGradientEx(Rectangle rec, Color col1, Color col2, Color col3, Color col4);
+	[CallingConvention(.Cdecl), LinkName("DrawRectangleGradientEx")]
+	public static extern void DrawRectangleGradient(Rectangle rec, Color col1, Color col2, Color col3, Color col4);
 
 	// Draw rectangle outline 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern void DrawRectangleLines(int32 posX, int32 posY, int32 width, int32 height, Color color);
-
-	// Draw rectangle outline with extended parameters 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawRectangleLinesEx(Rectangle rec, float lineThick, Color color);
-
-	// Draw rectangle with rounded edges 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawRectangleRounded(Rectangle rec, float roundness, int32 segments, Color color);
-
-	// Draw rectangle with rounded edges outline 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawRectangleRoundedLines(Rectangle rec, float roundness, int32 segments, float lineThick, Color color);
 
 	// Draw a color-filled triangle (vertex in counter-clockwise order!) 
 	[CLink, CallingConvention(.Cdecl)]
@@ -153,8 +141,8 @@ static
 	public static extern void DrawPolyLines(Vector2 center, int32 sides, float radius, float rotation, Color color);
 
 	// Draw a polygon outline of n sides with extended parameters 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawPolyLinesEx(Vector2 center, int32 sides, float radius, float rotation, float lineThick, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawPolyLinesEx")]
+	public static extern void DrawPolyLines(Vector2 center, int32 sides, float radius, float rotation, float lineThick, Color color);
 
 	// Begin scissor mode (define screen area for following drawing) 
 	[CLink, CallingConvention(.Cdecl)]
@@ -169,20 +157,20 @@ static
 	public static extern void DrawText(char8* text, int32 posX, int32 posY, int32 fontSize, Color color);
 
 	// Draw text using font and additional parameters 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawTextEx(Font font, char8* text, Vector2 position, float fontSize, float spacing, Color tint);
+	[CallingConvention(.Cdecl), LinkName("DrawTextEx")]
+	public static extern void DrawText(Font font, char8* text, Vector2 position, float fontSize, float spacing, Color tint);
 
 	// Draw text using Font and pro parameters (rotation) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawTextPro(Font font, char8* text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint);
+	[CallingConvention(.Cdecl), LinkName("DrawTextPro")]
+	public static extern void DrawText(Font font, char8* text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint);
 
 	// Draw one character (codepoint) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawTextCodepoint(Font font, int32 codepoint, Vector2 position, float fontSize, Color tint);
+	[CallingConvention(.Cdecl), LinkName("DrawTextCodepoint")]
+	public static extern void DrawCodepoint(Font font, int32 codepoint, Vector2 position, float fontSize, Color tint);
 
 	// Draw multiple character (codepoint) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawTextCodepoints(Font font, int32* codepoints, int32 count, Vector2 position, float fontSize, float spacing, Color tint);
+	[CallingConvention(.Cdecl), LinkName("DrawTextCodepoints")]
+	public static extern void DrawCodepoints(Font font, int32* codepoints, int32 count, Vector2 position, float fontSize, float spacing, Color tint);
 
 	// Draw a line in 3D world space 
 	[CLink, CallingConvention(.Cdecl)]
@@ -209,32 +197,32 @@ static
 	public static extern void DrawCube(Vector3 position, float width, float height, float length, Color color);
 
 	// Draw cube (Vector version) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawCubeV(Vector3 position, Vector3 size, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawCubeV")]
+	public static extern void DrawCube(Vector3 position, Vector3 size, Color color);
 
 	// Draw cube wires 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern void DrawCubeWires(Vector3 position, float width, float height, float length, Color color);
 
 	// Draw cube wires (Vector version) 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawCubeWiresV(Vector3 position, Vector3 size, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawCubeWiresV")]
+	public static extern void DrawCubeWires(Vector3 position, Vector3 size, Color color);
 
 	// Draw cube textured 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern void DrawCubeTexture(Texture2D texture, Vector3 position, float width, float height, float length, Color color);
 
 	// Draw cube with a region of a texture 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawCubeTextureRec(Texture2D texture, Rectangle source, Vector3 position, float width, float height, float length, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawCubeTextureRec")]
+	public static extern void DrawCubeTexture(Texture2D texture, Rectangle source, Vector3 position, float width, float height, float length, Color color);
 
 	// Draw sphere 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern void DrawSphere(Vector3 centerPos, float radius, Color color);
 
 	// Draw sphere with extended parameters 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawSphereEx(Vector3 centerPos, float radius, int32 rings, int32 slices, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawSphereEx")]
+	public static extern void DrawSphere(Vector3 centerPos, float radius, int32 rings, int32 slices, Color color);
 
 	// Draw sphere wires 
 	[CLink, CallingConvention(.Cdecl)]
@@ -245,16 +233,16 @@ static
 	public static extern void DrawCylinder(Vector3 position, float radiusTop, float radiusBottom, float height, int32 slices, Color color);
 
 	// Draw a cylinder with base at startPos and top at endPos 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawCylinderEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int32 sides, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawCylinderEx")]
+	public static extern void DrawCylinder(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int32 sides, Color color);
 
 	// Draw a cylinder/cone wires 
 	[CLink, CallingConvention(.Cdecl)]
 	public static extern void DrawCylinderWires(Vector3 position, float radiusTop, float radiusBottom, float height, int32 slices, Color color);
 
 	// Draw a cylinder wires with base at startPos and top at endPos 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawCylinderWiresEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int32 sides, Color color);
+	[CallingConvention(.Cdecl), LinkName("DrawCylinderWiresEx")]
+	public static extern void DrawCylinderWires(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int32 sides, Color color);
 
 	// Draw a plane XZ 
 	[CLink, CallingConvention(.Cdecl)]
@@ -269,10 +257,10 @@ static
 	public static extern void DrawBillboard(Camera camera, Texture2D texture, Vector3 position, float size, Color tint);
 
 	// Draw a billboard texture defined by source 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawBillboardRec(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector2 size, Color tint);
+	[CallingConvention(.Cdecl), LinkName("DrawBillboardRec")]
+	public static extern void DrawBillboard(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector2 size, Color tint);
 
 	// Draw a billboard texture defined by source and rotation 
-	[CLink, CallingConvention(.Cdecl)]
-	public static extern void DrawBillboardPro(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint);
+	[CallingConvention(.Cdecl), LinkName("DrawBillboardPro")]
+	public static extern void DrawBillboard(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint);
 }

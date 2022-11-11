@@ -25,7 +25,7 @@ public struct Rectangle
 
 	// Draw a color-filled rectangle with pro parameters 
 	[CallingConvention(.Cdecl), LinkName("DrawRectanglePro"), NoShow]
-	public static extern void DrawPro(Rectangle rec, Vector2 origin, float rotation, Color color);
+	public static extern void Draw(Rectangle rec, Vector2 origin, float rotation, Color color);
 
 	public void Draw(Color color)
 	{
@@ -34,6 +34,30 @@ public struct Rectangle
 
 	public void Draw(Vector2 origin, float rotation, Color color)
 	{
-		DrawPro(this, origin, rotation, color);
+		Draw(this, origin, rotation, color);
+	}
+
+	// Draw rectangle outline with extended parameters 
+	[CallingConvention(.Cdecl), LinkName("DrawRectangleLinesEx"), NoShow]
+	public static extern void Draw(Rectangle rec, float lineThick, Color color);
+	public void Draw(float lineThick, Color color)
+	{
+		Draw(this, lineThick, color);
+	}
+
+	// Draw rectangle with rounded edges 
+	[CallingConvention(.Cdecl), LinkName("DrawRectangleRounded"), NoShow]
+	public static extern void Draw(Rectangle rec, float roundness, int32 segments, Color color);
+	public void Draw(float roundness, int32 segments, Color color)
+	{
+		Draw(this, roundness, segments, color);
+	}
+
+	// Draw rectangle with rounded edges outline 
+	[CallingConvention(.Cdecl), LinkName("DrawRectangleRoundedLines"), NoShow]
+	public static extern void Draw(Rectangle rec, float roundness, int32 segments, float lineThick, Color color);
+	public void Draw(float roundness, int32 segments, float lineThick, Color color)
+	{
+		Draw(this, roundness, segments, lineThick, color);
 	}
 }
