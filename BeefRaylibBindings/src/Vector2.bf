@@ -37,23 +37,8 @@ struct Vector2
 		}
 	}
 
-	public static Vector2 Zero
-	{
-		[Inline]
-		get
-		{
-			return .(0.0f, 0.0f);
-		}
-	}
-
-	public static Vector2 One
-	{
-		[Inline]
-		get
-		{
-			return .(1.0f, 1.0f);
-		}
-	}
+	public const Vector2 Zero = .(0.0f, 0.0f);
+	public const Vector2 One = .(1.0f, 1.0f);
 
 	[Inline]
 	public this(float x, float y)
